@@ -82,7 +82,7 @@ void Heap::print (int option) {
     }
 }
 // print helper
-void preorder(int index,std::vector<int> heapArray) {
+void Heap::preorder(int index,std::vector<int> heapArray) {
     if (index < heapArray.size()) {
         // Print the current element
         std::cout << heapArray[index] << " ";
@@ -91,7 +91,7 @@ void preorder(int index,std::vector<int> heapArray) {
         preorder(2 * index + 2,heapArray);
     }
 }
-void inorder(int index,std::vector<int> heapArray) {
+void Heap::inorder(int index,std::vector<int> heapArray) {
     if (index < heapArray.size()) {
         // Recursively traverse the left subtree
         inorder(2 * index + 1,heapArray);
@@ -101,7 +101,7 @@ void inorder(int index,std::vector<int> heapArray) {
         inorder(2 * index + 2,heapArray);
     }
 }
-void postorder(int index,std::vector<int> heapArray) {
+void Heap::postorder(int index,std::vector<int> heapArray) {
     if (index < heapArray.size()) {
         // Recursively traverse the left and right subtrees
         postorder(2 * index + 1,heapArray);
@@ -110,7 +110,7 @@ void postorder(int index,std::vector<int> heapArray) {
         std::cout << heapArray[index] << " ";
     }
 }
-void levelByLevel(std::vector<int> heapArray) {
+void Heap::levelByLevel(std::vector<int> heapArray) {
     for (int i = 0; i < heapArray.size(); i++) {
         std::cout << heapArray[i] << " ";
     }
