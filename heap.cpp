@@ -14,7 +14,7 @@ Heap::~Heap() {};
 void Heap::heapifyUp(int index) {
     while (index > 0) {
         int parentIndex = (index - 1)/2;
-        if (heapArray[index] > parentIndex) {
+        if (heapArray[index] > heapArray[parentIndex]) {
             std::swap(heapArray[index],heapArray[parentIndex]);
             index = parentIndex;
         } else {
