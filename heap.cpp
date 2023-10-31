@@ -40,6 +40,25 @@ void Heap::heapifyDown(int index) {
     } while (largest != index);
 }
 // public
+void Heap::insert(int value) {
+    int index = size();
+    heapArray.push_back(value);
+    heapifyUp(index);
+}
 int Heap::getMax() {
     return heapArray[0];
+}
+void Heap::deleteMax() {
+    if (isEmpty()) {
+        return;
+    }
+    heapArray[0] = heapArray.back();
+    heapArray.pop_back();
+    heapifyDown(0);
+}
+bool Heap::isEmpty() {
+    return heapArray.empty();
+}
+int Heap::size() {
+    return heapArray.size();
 }
