@@ -54,10 +54,6 @@ public:
     // 3: Postorder
     // 4: Level by Level 
     void print(int option);
-    void preorder(int index,std::vector<int> heapArray);
-    void inorder(int index,std::vector<int> heapArray);
-    void postorder(int index,std::vector<int> heapArray);
-    void levelByLevel(std::vector<int> heapArray);
 };
 
 #endif
