@@ -24,21 +24,27 @@ void Heap::heapifyUp(int index) {
 }
 void Heap::heapifyDown(int index) {
     int size = heapArray.size();
-    int left,right,largest;
-   do {
-        left = 2*index + 1;
-        right = 2*index + 2;
-        largest = index;
+
+    while (true) {
+        int largest = index;
+        int left = 2 * index + 1;
+        int right = 2 * index + 2;
 
         if (left < size && heapArray[left] > heapArray[largest]) {
             largest = left;
-        } if (right < size && heapArray[right] > heapArray[largest]) {
-            largest = right;
-        } if (largest != index) {
-            std::swap(heapArray[index],heapArray[largest]);
-            index = largest;
         }
-    } while (largest != index);
+
+        if (right < size && heapArray[right] > heapArray[largest]) {
+            largest = right;
+        }
+
+        if (largest == index) {
+            break;
+        }
+
+        std::swap(heapArray[index], heapArray[largest]);
+        index = largest;
+    }
 }
 // public
 void Heap::insert(int value) {
